@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Khi ta bấm submit trong 1 form, trang sẽ được tải lại -->
+    <!-- Việc tải lại trang khi ta bấm submit là hành động mặc định của trình duyệt -->
+    <div style="color:red" id="error"></div>
+    <form onsubmit="submitHandle(this,event)">
+        <input name="full_name" placeholder="Full name"><br>
+        <input name="age" placeholder="Age"><br>
+        <input name="email" placeholder="Email"><br>
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        const errorDiv = document.querySelector("#error")
+        const regExpEmail = /^[A-z0-9]+@[A-z0-9]+\.[A-z0-9]+$/
+        function submitHandle(form,e) {
+            e.preventDefault() // câu lệnh này sẽ ngăn chặn sự kiện mặc định trên trình duyệt
+            /// tức không cho trang tải lại nữa
+            const inputAll = form.querySelectorAll("input")
+            var errors = ""
+            for (const input of inputAll) {
+                if (input.name === "age") {
+                    if (input.value === "") {
+                        errors += "Lỗi tuổi không được rỗng<br>"
+                        continue 
+                    }
+                    if (+input.value < 0) {
+                        errors += "Lỗi tuổi không được âm<br>"
+                        continue
+                    }
+                    continue
+                }
+                if (input.name === "full_name") {
+                    if (input.value === "") {
+                        errors += "Lỗi full name không được rỗng<br>"
+                        continue
+                    }
+                }
+                if (input.name === "email") {
+                    if (input.value === "") {
+                        errors += "Lỗi email không được rỗng<br>"
+                        continue
+                    }
+                    if (!regExpEmail.test(input.value)) {
+                        errors += "Lỗi email không đúng định dạng<br>"
+                        continue
+                    }
+                }
+            }
+
+            errorDiv.innerHTML = errors
+            /// nếu ta if 1 biến mà không có toán tử so sánh thì if đúng khi biến này:
+            ////// khác null, khác undefined, khác false, khác chuỗi rỗng
+            if (!errors) console.log("Submit dữ liệu")
+        }
+        
+        /// kiểm tra 1 chuỗi có phải là dạng số điện thoại
+        /// 1 chuỗi là dạng số điện thoại nếu ký tự đầu là số 0 và 9 ký tự sau là số
+        const chuoi = "abc"
+        const regExp = /^0[0-9]{9}$/
+        
+        /// kiểm tra 1 chuỗi có phải là dạng email hay không
+        /// email đúng dạng phải có dấu @, trước dấu @ phải có ít nhất một ký tự (không phải là ký tự đặc biệt)
+        /// phía sau dấu @ phải có dấu chấm, giữa dấu @ và dấu chấm phải có ít nhất một ký tự, sau dấu chấm phải có ít nhất một ký tự
+        console.log(regExpEmail.test(chuoi))
+    </script>
+</body>
+</html>

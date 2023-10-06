@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <input id="so1" onchange="onChange()"/>
+        <input id="so2" onchange="onChange()"/>
+        <div id="result"></div>
+        <!-- Nhập 2 số vào trong input, tính tổng và hiển thị lên div có id là result -->
+        <script>
+            const so1 = document.getElementById("so1")
+            const so2 = document.getElementById("so2")
+            const result = document.getElementById("result")
+            function onChange() {
+                result.innerHTML = +so1.value + +so2.value
+            }
+        </script>
+        
+    </body>
+</html>

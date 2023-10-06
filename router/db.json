@@ -1,0 +1,26 @@
+{
+    "posts": [
+      { "id": 1, "title": "json-server", "author": "typicode" },
+      {"id": 2, "title":  "camnh", "author": "codegym"}
+    ],
+    "comments": [
+      { "id": 1, "body": "some comment", "postId": 1, "userId": 1 }
+    ],
+    "profile": { "name": "typicode" },
+    "users": [
+      {
+        "id": 1,
+        "name": "nguyen huu cam",
+        "dob": "01/01/1991",
+        "address": "PTIT",
+        "phone_number": "012812xxx"
+      },
+      {
+        "id": 2,
+        "name": "nguyen van b",
+        "dob": "27/9/2023",
+        "address": "hanoi",
+        "phone_number": "12345678"
+      }
+    ]
+  }

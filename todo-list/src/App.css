@@ -1,0 +1,52 @@
+.taskItem {
+  padding:5px 20px;
+  width:300px;
+  border-radius:3px;
+  border-bottom:1px solid rgb(184, 184, 184);
+  margin: auto;
+  background-color: rgb(240, 240, 240);
+}
+
+.taskItem:hover {
+  background-color: rgb(226, 226, 226);
+}
+
+.taskItem.completed {
+  text-decoration-line: line-through;
+}
+.taskItem {
+  padding:5px 20px;
+  width:300px;
+  border-radius:3px;
+  border-bottom:1px solid rgb(184, 184, 184);
+  margin: auto;
+  background-color: rgb(240, 240, 240);
+}
+
+.taskItem:hover {
+  background-color: rgb(226, 226, 226);
+}
+
+.taskItem.completed {
+  text-decoration-line: line-through;
+}
+
+.formTask {
+  padding:5px 2px;
+  width:336px;
+  margin: auto;
+  background-color: rgb(240, 240, 240);
+  text-align: center;
+}
+
+.formTask input {
+  width: 90%;
+  margin: auto;
+  border: 0px;
+  padding: 5px;
+  font-size: 20px;
+}
+
+.formTask input:focus {
+  outline: 0px;
+}

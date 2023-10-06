@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="number"/>
+    <button onclick="clickme()">Click me</button>
+    <table>
+        <tbody id="bcc">
+
+        </tbody>
+    </table>
+    <script>
+        const tbody = document.querySelector("#bcc")
+        function clickme() {
+            tbody.innerHTML = ""
+            const number = +document.querySelector("#number").value
+            for (var i = 1; i < 11; i++) {
+                const newTr = document.createElement("tr")
+                newTr.innerHTML = `
+                    <td>${number}</td>
+                    <td>x</td>
+                    <td>${i}</td>
+                    <td>=</td>
+                    <td>${i*number}</td>
+                `
+                tbody.append(newTr)
+                newTr.addEventListener("click",function () {
+                    alert(newTr.innerText.replaceAll("	",""))
+                })
+                // tbody.innerHTML += `<tr>
+                //     <td>${number}</td>
+                //     <td>x</td>
+                //     <td>${i}</td>
+                //     <td>=</td>
+                //     <td>${i*number}</td>
+                // </tr>`
+                // const trAll = tbody.querySelectorAll("tr") // trAll là một mảng chứa các element tr
+                // const tr = trAll[trAll.length-1]  // lấy thẻ tr cuối cùng
+                // tr.addEventListener("click",function () {
+                //     alert(tr.innerText.replaceAll("	",""))
+                // })
+            }
+        } 
+    </script>
+</body>
+</html>
