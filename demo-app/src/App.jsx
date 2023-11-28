@@ -19,9 +19,9 @@ function App() {
     <>
         {checkAge()}
         <ul>
-         {persons.map(nigga => {
+         {persons.map(bla => {
           return (
-            <li>{nigga.id} -- {nigga.name} -- {nigga.age}</li> 
+            <li>{bla.id} -- {bla.name} -- {bla.age}</li> 
           )
          })}
         </ul>
@@ -29,5 +29,5 @@ function App() {
   );
 }
 export default App;
-// {nigga => { ... }} là một hàm callback, được gọi cho mỗi phần tử trong mảng persons.
-//  Đối số nigga trong hàm callback đại diện cho mỗi phần tử trong mảng persons.
+// {bla => { ... }} là một hàm callback, được gọi cho mỗi phần tử trong mảng persons.
+//  Đối số bla trong hàm callback đại diện cho mỗi phần tử trong mảng persons.
