@@ -1,9 +1,33 @@
-
+import './App.css';
 function App() {
-  let name = "Trần Ngọc Qúy"
+  const checkAge = () => {
+    let a = 2023;
+    let b = 2004;
+    if (a - b > 22) {
+     return  <p className="a">Tôi là developer</p>
+    }else {
+      return <p className="c">Tôi là sờ tiu đừn</p>
+    }
+  }
+  const persons = [
+    { id: 1, name: 'Tran Ngoc Quy', age: 19},
+    { id: 2, name: 'Tran Ngoc Thuy Tien', age: 18},
+    { id: 3, name: 'Tran Ngoc Phuong', age: 24}
+
+  ]
   return (
-   <p>Hello {name}</p>
+    <>
+        {checkAge()}
+        <ul>
+         {persons.map(nigga => {
+          return (
+            <li>{nigga.id} -- {nigga.name} -- {nigga.age}</li> 
+          )
+         })}
+        </ul>
+    </>
   );
 }
-
 export default App;
+// {nigga => { ... }} là một hàm callback, được gọi cho mỗi phần tử trong mảng persons.
+//  Đối số nigga trong hàm callback đại diện cho mỗi phần tử trong mảng persons.
